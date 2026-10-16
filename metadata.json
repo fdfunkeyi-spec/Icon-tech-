@@ -1,0 +1,7 @@
+{
+  "name": "ICON TECH - Electronics Sales & Precision Device Repairs",
+  "description": "The premier electronics retailer and component-level repair center in Ondo State, Nigeria. New & certified laptops, smartphones, accessories, and expert hardware diagnostics opposite Adeyemi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
