@@ -1,28 +1,295 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ICON TECH — Precision Repairs & Premium Gadget Store | Ondo State, Nigeria</title>
-    <meta name="description" content="The premier electronics retailer and component-level repair center in Ondo State, Nigeria. New & certified laptops, smartphones, accessories, and expert hardware diagnostics opposite Adeyemi." />
-    <meta property="og:title" content="ICON TECH — Precision Repairs & Premium Gadget Store" />
-    <meta property="og:description" content="Advanced mobile phone and laptop restoration, paired with top-tier consumer technology retail in Ondo State, Nigeria." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#020617" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="ICON TECH" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  </head>
-  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICON TECH | Electronics Sales & Repairs, Ondo State</title>
+<meta name="description" content="Shop gadgets and accessories and book phone or laptop repairs at ICON TECH, Opposite Adeyemi, Ondo State, Nigeria.">
+<meta name="theme-color" content="#14161b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#14161b;--char:#1d2027;--line:#dfe2e8;--bg:#f4f5f7;--mut:#5b6270;--blue:#2f6bff;--blue-d:#1f4fd1;--ok:#0b7a43;--no:#b42318;--ask:#8a5a00}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:10px 18px;border:2px solid var(--blue);background:var(--blue);color:#fff;font:600 15px inherit;border-radius:8px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--blue-d);border-color:var(--blue-d)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.ghost:hover{background:rgba(127,127,127,.15)}
+.btn.wa{background:#128c4a;border-color:#128c4a}.btn.sm{min-height:40px;padding:6px 12px;font-size:14px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+header{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff}
+.bar{display:flex;align-items:center;gap:14px;min-height:64px;flex-wrap:wrap;padding:8px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 20px/1 "Segoe UI",sans-serif;letter-spacing:.5px}
+.logo small{display:block;font:500 10px/1.2 sans-serif;color:#aab0bd;letter-spacing:1.5px}
+nav{display:flex;gap:4px;margin-left:8px}nav a{padding:8px 10px;text-decoration:none;color:#d6d9e0;border-radius:6px;font-weight:500}nav a:hover{color:#fff;background:var(--char)}
+.search{flex:1;min-width:160px;max-width:380px;margin-left:auto}
+.search input{width:100%;min-height:42px;padding:8px 12px;border-radius:8px;border:1px solid #3a3f4a;background:var(--char);color:#fff;font:inherit}
+.icon-btn{position:relative;min-width:44px;min-height:44px;background:var(--char);color:#fff;border:1px solid #3a3f4a;border-radius:8px;cursor:pointer;font:600 14px inherit;padding:0 12px}
+.count{background:var(--blue);border-radius:99px;padding:1px 7px;margin-left:6px;font-size:12px}
+#menuBtn{display:none}
+@media(max-width:860px){#menuBtn{display:block}nav{display:none;order:9;width:100%;flex-direction:column;margin:0}nav.open{display:flex}.search{order:8;max-width:none;width:100%;margin:0}}
+.hero{background:linear-gradient(120deg,rgba(14,16,20,.97) 45%,rgba(14,16,20,.55)),url(images/hero.jpg) center/cover var(--ink);color:#fff;padding:72px 0}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.1;margin:0 0 16px;max-width:15em}
+.hero p{max-width:34em;color:#c9ced8;font-size:18px;margin:0 0 26px}.hero .btn+.btn{margin-left:8px}
+section{padding:48px 0}h2{font-size:28px;margin:0 0 6px}.sub{color:var(--mut);margin:0 0 24px;max-width:46em}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;text-align:left;padding:0;font:600 15px inherit}
+.cat:hover{border-color:var(--blue)}.cat img{aspect-ratio:1;object-fit:contain;width:100%;background:#fff}.cat span{display:block;padding:10px 12px;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+@media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:10px}.card .acts .btn{width:100%}}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;overflow:hidden}
+.card img{aspect-ratio:1;object-fit:contain;width:100%;background:#fff}
+.card .b{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1;border-top:1px solid var(--line)}
+.card h3{margin:0;font-size:16px}.price{font-weight:800;font-size:19px}
+.card p{margin:0;color:var(--mut);font-size:14px;flex:1}
+.tag{font-size:12px;font-weight:700}.tag.ok{color:var(--ok)}.tag.no{color:var(--no)}.tag.ask{color:var(--ask)}
+.demo{font-size:11px;color:var(--mut)}
+.acts{display:flex;flex-wrap:wrap;gap:6px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.tools label{display:flex;flex-direction:column;font-size:13px;color:var(--mut);gap:2px}
+select,input,textarea{font:inherit;min-height:44px;padding:8px 10px;border:1px solid #b9bfca;border-radius:8px;background:#fff;color:var(--ink);width:100%}
+.tools select,.tools input{width:auto;min-width:150px}
+.dark{background:var(--ink);color:#fff}.dark .sub{color:#b3b9c6}
+.svc{background:var(--char);border:1px solid #2d323c;border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.svc h3{margin:0;font-size:17px}.svc p{margin:0;color:#b3b9c6;font-size:14px;flex:1}
+form.panel,.panel{background:#fff;color:var(--ink);border-radius:10px;padding:20px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.panel .full{grid-column:1/-1}@media(max-width:620px){.panel{grid-template-columns:1fr}}
+.panel label{font-weight:600;font-size:14px;display:flex;flex-direction:column;gap:4px}
+.err{color:var(--no);font-size:13px;font-weight:500}
+#ack{background:#e8f6ee;border:1px solid #9fd5b6;color:#0d3b22;padding:14px;border-radius:8px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.why div{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:8px;padding:14px}
+.why b{display:block}.why span{color:var(--mut);font-size:14px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.contact dl{margin:0}.contact dt{font-weight:700;margin-top:10px}.contact dd{margin:0;color:var(--mut)}
+footer{background:var(--ink);color:#b3b9c6;padding:36px 0 24px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+footer h4{color:#fff;margin:0 0 8px}footer a{display:block;padding:3px 0;text-decoration:none}footer a:hover{color:#fff}
+dialog{border:0;border-radius:12px;padding:0;width:min(720px,94vw);max-height:92vh}dialog::backdrop{background:rgba(0,0,0,.6)}
+.dlg{padding:18px;display:grid;gap:12px}.dlg header{position:static;background:none;color:inherit;display:flex;justify-content:space-between;align-items:center}
+.dlg h3{margin:0}.det{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:620px){.det{grid-template-columns:1fr}}
+.thumbs{display:flex;gap:6px;margin-top:6px}.thumbs img{width:56px;height:56px;object-fit:contain;border:1px solid var(--line);border-radius:6px;cursor:pointer;background:#fff}
+.line{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:8px 0}
+.line img{width:52px;height:52px;object-fit:contain}.q{display:flex;align-items:center;gap:6px}.q button{width:36px;height:36px;border:1px solid #b9bfca;background:#fff;border-radius:6px;font-size:18px;cursor:pointer}
+.sr{position:absolute;left:-9999px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+ <a class="logo" href="#home" aria-label="ICON TECH home">
+  <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l15 9v18l-15 9L5 29V11z" fill="none" stroke="#2f6bff" stroke-width="3"/><path d="M14 14h12M20 14v13M14 27h12" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg>
+  <span>ICON TECH<small>SALES &amp; REPAIRS</small></span></a>
+ <nav id="nav" aria-label="Main"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#repairs">Repairs</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
+ <div class="search"><label class="sr" for="q">Search products</label><input id="q" type="search" placeholder="Search by product name or model"></div>
+ <button class="icon-btn" id="cartBtn" aria-label="Open cart">Cart<span class="count" id="cartCount">0</span></button>
+ <button class="icon-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
+
+<main id="home">
+<div class="hero"><div class="wrap">
+ <h1>Your Trusted Hub for Electronics Sales &amp; Repairs</h1>
+ <p>Shop quality gadgets, discover essential accessories, and get reliable phone and laptop repair services at ICON TECH.</p>
+ <a class="btn" href="#shop">Shop Electronics</a><a class="btn ghost" href="#book">Book a Repair</a>
+</div></div>
+
+<section id="categories"><div class="wrap"><h2>Shop by category</h2><p class="sub">Pick a category to see what is on the shelf.</p><div class="cats" id="cats"></div></div></section>
+
+<section id="shop" style="padding-top:0"><div class="wrap">
+ <h2>Shop</h2><p class="sub">Prices and stock shown are demonstration values until the shop confirms them. Send an enquiry on WhatsApp to confirm availability.</p>
+ <div class="tools">
+  <label>Category<select id="fCat"></select></label>
+  <label>Max price (₦)<input id="fMax" type="number" min="0" inputmode="numeric" placeholder="No limit"></label>
+  <label>Sort<select id="fSort"><option value="new">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
+ </div>
+ <div class="grid" id="grid" aria-live="polite"></div>
+</div></section>
+
+<section class="dark" id="repairs"><div class="wrap">
+ <h2>Repair services</h2><p class="sub">Bring your phone or laptop to the shop or send the details first. A technician inspects the device, then confirms the fault, cost, parts availability and timeline. Not every fault can be repaired.</p>
+ <div class="grid" id="svcs"></div>
+ <div style="height:32px" id="book"></div>
+ <h2>Book a repair</h2><p class="sub">This sends a request, it does not confirm an appointment. The shop confirms after reviewing it.</p>
+ <form class="panel" id="rform" novalidate>
+  <label>Your name<input id="rName" autocomplete="name" required><span class="err" id="eName"></span></label>
+  <label>Phone number<input id="rPhone" type="tel" autocomplete="tel" placeholder="08012345678" required><span class="err" id="ePhone"></span></label>
+  <label>Device type<select id="rType"><option value="">Select…</option><option>Smartphone</option><option>Laptop</option><option>Tablet</option><option>Other</option></select><span class="err" id="eType"></span></label>
+  <label>Brand and model<input id="rModel" placeholder="e.g. Samsung A14" required><span class="err" id="eModel"></span></label>
+  <label class="full">Describe the problem<textarea id="rProb" rows="3" required></textarea><span class="err" id="eProb"></span></label>
+  <label>Preferred visit date<input id="rDate" type="date"></label>
+  <label>Service<select id="rSvc"></select></label>
+  <p class="full" style="margin:0;color:var(--mut);font-size:14px">To share a photo of the fault, attach it in the WhatsApp chat after you submit.</p>
+  <div class="full"><button class="btn" type="submit">Submit Repair Request</button></div>
+  <div class="full" id="ack" hidden tabindex="-1"></div>
+ </form>
+</div></section>
+
+<section id="about"><div class="wrap"><h2>Why choose ICON TECH?</h2><p class="sub">Electronics, accessories and repairs from one shop in Ondo State.</p>
+ <div class="why">
+  <div><b>Electronics and accessories in one place</b><span>Phones, laptops, audio, chargers and more.</span></div>
+  <div><b>Professional device diagnostics</b><span>We inspect before we quote.</span></div>
+  <div><b>Clear pricing and availability</b><span>Ask us to confirm before you travel.</span></div>
+  <div><b>Convenient repair enquiries</b><span>Send details online, then visit.</span></div>
+  <div><b>Direct communication with the shop</b><span>Chat on WhatsApp or call.</span></div>
+  <div><b>Physical shop in Ondo State</b><span>Opposite Adeyemi.</span></div>
+ </div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><h2>Location and contact</h2>
+ <div class="panel contact" style="display:grid">
+  <dl><dt>ICON TECH</dt><dd id="cAddr"></dd><dt>Phone</dt><dd id="cPhone"></dd><dt>WhatsApp</dt><dd id="cWa"></dd><dt>Email</dt><dd id="cMail"></dd><dt>Opening hours</dt><dd id="cHours"></dd></dl>
+  <div><p style="margin-top:0">Get directions to the shop.</p><a class="btn" id="cMap" href="#contact" target="_blank" rel="noopener">Get Directions</a><p class="demo" id="mapNote"></p></div>
+ </div></div></section>
+</main>
+
+<footer><div class="wrap"><div class="cols">
+ <div><h4>ICON TECH</h4><div id="fAddr"></div><div class="demo" style="color:#8890a0;margin-top:8px">&copy; <span id="yr"></span> ICON TECH</div></div>
+ <div><h4>Categories</h4><div id="fCats"></div></div>
+ <div><h4>Repairs</h4><a href="#repairs">Phone repairs</a><a href="#repairs">Laptop repairs</a><a href="#book">Book a repair</a></div>
+ <div><h4>Info</h4><a href="#" data-act="legal" data-k="privacy">Privacy policy</a><a href="#" data-act="legal" data-k="terms">Terms</a><a href="#" id="fSocial">Social media</a></div>
+</div></div></footer>
+
+<dialog id="dlg"></dialog>
+
+<script>
+/* ===== EDIT THIS SECTION: shop details ===== */
+const CONFIG={
+  address:"Opposite Adeyemi, Ondo State, Nigeria",
+  whatsapp:"",            // international format, digits only, e.g. 2348012345678
+  phone:"",               // e.g. 08012345678
+  email:"",
+  hours:"",               // e.g. Mon-Sat 8am-6pm
+  mapsUrl:"",             // paste the Google Maps share link for the exact shop pin
+  social:{}               // e.g. {Instagram:"https://instagram.com/yourpage"}
+};
+const CATS=["Smartphones","Laptops","Audio & Headsets","Chargers & Cables","Power Banks","Accessories"];
+/* stock: "in" = Available, "out" = Out of stock, "ask" = Confirm availability.
+   img: photo files in the images/ folder. Prices below are SAMPLE prices. */
+const PRODUCTS=[
+ {id:1,name:"Samsung Galaxy A-series phone",cat:"Smartphones",price:150000,stock:"ask",img:["images/samsung-phone.jpg"],desc:"Android smartphone. Replace with exact model.",specs:["Model: to be added","Storage: to be added","Colour: to be added"]},
+ {id:2,name:"iPhone (model to be confirmed)",cat:"Smartphones",price:450000,stock:"ask",img:["images/iphone.jpg"],desc:"Apple iPhone. Replace with exact model.",specs:["Model: to be added","Storage: to be added"]},
+ {id:3,name:"Redmi smartphone",cat:"Smartphones",price:120000,stock:"ask",img:["images/redmi.jpg"],desc:"Xiaomi Redmi smartphone. Replace with exact model.",specs:["Model: to be added"]},
+ {id:4,name:"HP laptop",cat:"Laptops",price:380000,stock:"ask",img:["images/hp-laptop.jpg"],desc:"HP laptop for work and study. Replace with exact model.",specs:["Processor: to be added","RAM: to be added","Storage: to be added"]},
+ {id:5,name:"Lenovo laptop",cat:"Laptops",price:350000,stock:"ask",img:["images/lenovo-laptop.jpg"],desc:"Lenovo laptop. Replace with exact model.",specs:["Processor: to be added","RAM: to be added"]},
+ {id:6,name:"Wireless Bluetooth headset",cat:"Audio & Headsets",price:15000,stock:"ask",img:["images/headset.jpg"],desc:"Wireless headset with microphone.",specs:["Connection: Bluetooth"]},
+ {id:7,name:"Bluetooth speaker",cat:"Audio & Headsets",price:20000,stock:"ask",img:["images/speaker.jpg"],desc:"Portable Bluetooth speaker.",specs:["Connection: Bluetooth"]},
+ {id:8,name:"Fast phone charger and cable",cat:"Chargers & Cables",price:6000,stock:"ask",img:["images/charger.jpg"],desc:"Wall adapter with USB cable. State your phone model when ordering.",specs:["Cable type: confirm with shop"]},
+ {id:9,name:"Power bank",cat:"Power Banks",price:18000,stock:"ask",img:["images/powerbank.jpg"],desc:"Portable power bank for phones.",specs:["Capacity: to be added"]},
+ {id:10,name:"Phone case and screen protector",cat:"Accessories",price:4000,stock:"ask",img:["images/case.jpg"],desc:"Protection set. Tell us your phone model.",specs:["Fits: confirm model"]},
+ {id:11,name:"Keyboard and mouse",cat:"Accessories",price:12000,stock:"ask",img:["images/keyboard-mouse.jpg"],desc:"Computer keyboard and mouse.",specs:["Connection: confirm with shop"]},
+ {id:12,name:"Flash drive",cat:"Accessories",price:5000,stock:"ask",img:["images/flash-drive.jpg"],desc:"USB flash drive for storage and transfer.",specs:["Capacity: to be added"]}
+];
+const SERVICES=[
+ ["Smartphone hardware diagnostics","We inspect the phone to find the fault, then confirm cost and timeline."],
+ ["Phone charging-port and charging-fault diagnosis","Slow, intermittent or no charging checked before any parts are quoted."],
+ ["Phone screen and battery replacement","Where parts are available. Availability is confirmed after inspection."],
+ ["Software troubleshooting","Operating-system errors, freezing and update problems."],
+ ["Laptop hardware diagnostics","Inspection of hardware faults, with the fault and cost confirmed first."],
+ ["Laptop charging and power troubleshooting","Laptops that will not charge or power on."]
+];
+/* ===== END EDIT SECTION ===== */
+
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const naira=n=>"₦"+Number(n).toLocaleString("en-NG");
+const STOCK={in:["Available","ok"],out:["Out of stock","no"],ask:["Confirm availability","ask"]};
+const ph=t=>"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="100%" height="100%" fill="#eceef2"/><text x="50%" y="47%" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#5b6270">Photo pending</text><text x="50%" y="55%" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#5b6270">'+esc(t).slice(0,34)+'</text></svg>');
+document.addEventListener("error",e=>{const t=e.target;if(t.tagName==="IMG"&&!t.dataset.f){t.dataset.f=1;t.src=ph(t.alt)}},true);
+const img=(p,i=0)=>`<img src="${esc(p.img[i]||"")}" alt="${esc(p.name)}" loading="lazy" width="400" height="400">`;
+
+let cart={};try{cart=JSON.parse(localStorage.getItem("icontech-cart")||"{}")}catch(e){}
+const saveCart=()=>{try{localStorage.setItem("icontech-cart",JSON.stringify(cart))}catch(e){}$("#cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0)};
+const prod=id=>PRODUCTS.find(p=>p.id==id);
+function wa(text){
+  if(!CONFIG.whatsapp){alert("The shop WhatsApp number has not been set yet. The owner must add it in CONFIG.whatsapp.");return}
+  window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(text),"_blank","noopener");
+}
+const st={q:"",cat:"All",max:"",sort:"new"};
+function card(p){
+  const [sl,sc]=STOCK[p.stock]||STOCK.ask;
+  return `<article class="card">${img(p)}<div class="b"><span class="tag ${sc}">${sl}</span><h3>${esc(p.name)}</h3><div class="price">${naira(p.price)}</div><div class="demo">Sample price, to be confirmed</div><p>${esc(p.desc)}</p>
+  <div class="acts"><button class="btn ghost sm" data-act="view" data-id="${p.id}" style="color:var(--ink)">View Details</button><button class="btn sm" data-act="add" data-id="${p.id}" ${p.stock==="out"?"disabled":""}>Add to Cart</button><button class="btn wa sm" data-act="enq" data-id="${p.id}">WhatsApp</button></div></div></article>`;
+}
+function renderShop(){
+  let l=PRODUCTS.filter(p=>(st.cat==="All"||p.cat===st.cat)&&(!st.max||p.price<=+st.max)&&(!st.q||(p.name+" "+p.desc+" "+p.cat).toLowerCase().includes(st.q.toLowerCase())));
+  l.sort((a,b)=>st.sort==="low"?a.price-b.price:st.sort==="high"?b.price-a.price:b.id-a.id);
+  $("#grid").innerHTML=l.length?l.map(card).join(""):'<p>No products match. Clear the search or filters, or ask us on WhatsApp.</p>';
+}
+function renderCart(){
+  const ids=Object.keys(cart).filter(id=>prod(id));let total=0;
+  const rows=ids.map(id=>{const p=prod(id),q=cart[id];total+=p.price*q;return `<div class="line">${img(p)}<div style="flex:1"><b>${esc(p.name)}</b><br>${naira(p.price)}</div><div class="q"><button data-act="dec" data-id="${id}" aria-label="Decrease quantity">−</button><span>${q}</span><button data-act="inc" data-id="${id}" aria-label="Increase quantity">+</button></div></div>`}).join("");
+  $("#dlg").innerHTML=`<div class="dlg"><header><h3>Your cart</h3><button class="btn ghost sm" data-act="close" style="color:var(--ink)">Close</button></header>${rows||"<p>Your cart is empty.</p>"}${ids.length?`<div class="line"><b>Order summary total</b><b>${naira(total)}</b></div><p class="demo">Totals use sample prices. The shop confirms final prices and availability. No payment is taken on this site.</p><button class="btn wa" data-act="order">Send Order Enquiry on WhatsApp</button>`:""}</div>`;
+}
+function openDlg(){const d=$("#dlg");if(!d.open)d.showModal()}
+function showProd(id){
+  const p=prod(id),[sl,sc]=STOCK[p.stock]||STOCK.ask;
+  $("#dlg").innerHTML=`<div class="dlg"><header><h3>${esc(p.name)}</h3><button class="btn ghost sm" data-act="close" style="color:var(--ink)">Close</button></header><div class="det"><div><div id="big">${img(p)}</div><div class="thumbs">${p.img.map((s,i)=>`<img src="${esc(s)}" alt="${esc(p.name)} photo${i+1}" data-act="thumb" data-id="${p.id}" data-i="${i}">`).join("")}</div></div>
+  <div><span class="tag ${sc}">${sl}</span><div class="price">${naira(p.price)}</div><div class="demo">Sample price, to be confirmed</div><p>${esc(p.desc)}</p><ul>${p.specs.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>
+  <div class="acts"><button class="btn" data-act="add" data-id="${p.id}" ${p.stock==="out"?"disabled":""}>Add to Cart</button><button class="btn wa" data-act="enq" data-id="${p.id}">WhatsApp enquiry</button></div></div></div></div>`;
+  openDlg();
+}
+function legal(k){
+  const t={privacy:"We collect only the details you type into the order or repair forms, and only to respond to your enquiry. Details are sent by you through WhatsApp. This site does not store them on a server. Owner: replace this with your full privacy policy.",terms:"Prices and availability on this site are subject to confirmation by the shop. Repairs are subject to inspection and are not guaranteed until the shop confirms. Owner: replace this with your full terms."}[k];
+  $("#dlg").innerHTML=`<div class="dlg"><header><h3>${k==="privacy"?"Privacy policy":"Terms"}</h3><button class="btn ghost sm" data-act="close" style="color:var(--ink)">Close</button></header><p>${t}</p></div>`;openDlg();
+}
+document.addEventListener("click",e=>{
+  const c=e.target.closest("[data-cat]");if(c){e.preventDefault();st.cat=c.dataset.cat;$("#fCat").value=st.cat;renderShop();location.hash="#shop";return}
+  const b=e.target.closest("[data-act]");if(!b)return;
+  const id=b.dataset.id,a=b.dataset.act;
+  if(a==="legal"){e.preventDefault();legal(b.dataset.k)}
+  else if(a==="view")showProd(id);
+  else if(a==="add"){cart[id]=(cart[id]||0)+1;saveCart();b.textContent="Added";setTimeout(()=>{b.textContent="Add to Cart"},1000)}
+  else if(a==="inc"||a==="dec"){cart[id]=(cart[id]||0)+(a==="inc"?1:-1);if(cart[id]<=0)delete cart[id];saveCart();renderCart()}
+  else if(a==="close")$("#dlg").close();
+  else if(a==="thumb"){const p=prod(id);$("#big").innerHTML=img(p,+b.dataset.i)}
+  else if(a==="enq"){const p=prod(id);wa(`Hello ICON TECH, is this available? ${p.name} (listed at ${naira(p.price)}).`)}
+  else if(a==="order"){
+    const ids=Object.keys(cart).filter(prod);let total=0;
+    const lines=ids.map(i=>{const p=prod(i);total+=p.price*cart[i];return `- ${p.name} x${cart[i]} @ ${naira(p.price)}`});
+    wa(`Hello ICON TECH, I would like to order:\n${lines.join("\n")}\nListed total: ${naira(total)}\nPlease confirm availability, final price and pickup or delivery.`);
+  }else if(a==="book"){$("#rSvc").value=b.dataset.s;location.hash="#book"}
+});
+$("#cartBtn").onclick=()=>{renderCart();openDlg()};
+$("#menuBtn").onclick=e=>{const n=$("#nav"),o=n.classList.toggle("open");e.target.setAttribute("aria-expanded",o)};
+$("#nav").onclick=()=>$("#nav").classList.remove("open");
+$("#q").oninput=e=>{st.q=e.target.value.trim();renderShop();if(st.q)location.hash="#shop"};
+$("#fCat").onchange=e=>{st.cat=e.target.value;renderShop()};
+$("#fMax").oninput=e=>{st.max=e.target.value;renderShop()};
+$("#fSort").onchange=e=>{st.sort=e.target.value;renderShop()};
+
+/* Repair form */
+$("#rform").onsubmit=e=>{
+  e.preventDefault();
+  const v=id=>$(id).value.trim(),phone=v("#rPhone").replace(/[\s-]/g,"");
+  const errs={"#eName":!v("#rName")&&"Enter your name.","#ePhone":!/^(\+?234|0)\d{10}$/.test(phone)&&"Enter a valid Nigerian number, e.g. 08012345678.","#eType":!v("#rType")&&"Choose a device type.","#eModel":!v("#rModel")&&"Enter the brand and model.","#eProb":v("#rProb").length<10&&"Describe the problem in at least 10 characters."};
+  let bad=false;for(const k in errs){$(k).textContent=errs[k]||"";if(errs[k])bad=true}
+  if(bad)return;
+  const msg=`Repair request for ICON TECH\nName: ${v("#rName")}\nPhone: ${phone}\nDevice: ${v("#rType")} - ${v("#rModel")}\nService: ${$("#rSvc").value}\nProblem: ${v("#rProb")}\nPreferred visit: ${v("#rDate")||"Not set"}`;
+  const a=$("#ack");a.hidden=false;
+  a.innerHTML=`<b>Repair request prepared.</b><p>It has not been sent yet and no appointment is confirmed. Send it to the shop on WhatsApp. The shop will confirm once it accepts your request.</p><button class="btn wa" type="button" id="sendRepair">Send Repair Details on WhatsApp</button>`;
+  $("#sendRepair").onclick=()=>wa(msg);a.focus();
+};
+
+/* Init */
+$("#fCat").innerHTML='<option value="All">All categories</option>'+CATS.map(c=>`<option>${esc(c)}</option>`).join("");
+$("#cats").innerHTML=CATS.map(c=>{const p=PRODUCTS.find(x=>x.cat===c)||{name:c,img:[]};return `<button class="cat" data-cat="${esc(c)}"><img src="${esc(p.img[0]||"")}" alt="${esc(c)}" loading="lazy" width="200" height="200"><span>${esc(c)}</span></button>`}).join("");
+$("#svcs").innerHTML=SERVICES.map(s=>`<div class="svc"><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p><button class="btn sm" data-act="book" data-s="${esc(s[0])}">Book a Repair</button></div>`).join("");
+$("#rSvc").innerHTML=SERVICES.map(s=>`<option>${esc(s[0])}</option>`).join("")+"<option>Other / not sure</option>";
+$("#rDate").min=new Date().toISOString().slice(0,10);
+const tbd=(el,v,link)=>{el.innerHTML=v?(link?`<a href="${esc(link)}">${esc(v)}</a>`:esc(v)):"To be added by the shop"};
+$("#cAddr").textContent=$("#fAddr").textContent=CONFIG.address;
+tbd($("#cPhone"),CONFIG.phone,CONFIG.phone&&"tel:"+CONFIG.phone);tbd($("#cWa"),CONFIG.whatsapp&&"+"+CONFIG.whatsapp,CONFIG.whatsapp&&"https://wa.me/"+CONFIG.whatsapp);
+tbd($("#cMail"),CONFIG.email,CONFIG.email&&"mailto:"+CONFIG.email);tbd($("#cHours"),CONFIG.hours);
+if(CONFIG.mapsUrl)$("#cMap").href=CONFIG.mapsUrl;else{$("#cMap").setAttribute("aria-disabled","true");$("#cMap").onclick=e=>{e.preventDefault();alert("The exact map pin has not been added yet.")};$("#mapNote").textContent="Exact map pin to be added by the shop."}
+$("#fCats").innerHTML=CATS.map(c=>`<a href="#shop" data-cat="${esc(c)}">${esc(c)}</a>`).join("");
+const soc=Object.entries(CONFIG.social);$("#fSocial").outerHTML=soc.length?soc.map(([k,u])=>`<a href="${esc(u)}" rel="noopener" target="_blank">${esc(k)}</a>`).join(""):'<a href="#contact">Social links to be added</a>';
+$("#yr").textContent=new Date().getFullYear();
+renderShop();saveCart();
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
 </html>
+
 
