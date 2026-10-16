@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICON TECH | Phones, laptops, gadgets and repairs in Ondo State</title>
+<meta name="description" content="ICON TECH sells new phones, laptops, headsets, chargers and accessories, and repairs phones and laptops. Opposite Adeyemi, Ondo State, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1553E6; --blue-dark:#0B3AB0; --sky:#E8F0FF;
+  --ink:#23272F; --ink-soft:#5A6270; --line:#DDE3EE; --white:#fff; --bg:#F6F8FC;
+  --ok:#0E8A4F; --warn:#B26A00; --bad:#B3261E;
+  --head:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  --body:'Figtree','Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.55;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:10px}
+.lead{color:var(--ink-soft);max-width:58ch;margin-bottom:28px}
+section{padding:64px 0}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--head);font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:-.02em}
+.logo b{color:#7FA6FF}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:#D7DCE6}
+nav a:hover{color:#fff}
+@media(max-width:640px){nav{gap:14px}nav a{font-size:.85rem}nav .hide-m{display:none}}
+
+/* hero */
+.hero{background:var(--blue);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:36px;grid-template-columns:1.2fr .8fr;align-items:center}
+.hero h1{font-size:clamp(2.6rem,9vw,4.8rem);font-weight:800}
+.hero p{margin:18px 0 26px;font-size:1.1rem;max-width:44ch;color:#E3ECFF}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;font-family:var(--body)}
+.btn-white{background:#fff;color:var(--blue-dark)}
+.btn-white:hover{background:var(--sky)}
+.btn-line{border-color:#fff;color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.12)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-dark)}
+.status{background:var(--ink);border-radius:14px;padding:22px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.status h3{font-size:1.1rem;margin-bottom:12px;color:#fff}
+.status .row{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid rgba(255,255,255,.14);font-size:.95rem;color:#D7DCE6}
+.status .row.today{color:#fff;font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.pill i{width:9px;height:9px;border-radius:50%;background:currentColor}
+.pill.open{background:#D6F5E3;color:var(--ok)}
+.pill.closed{background:#FBE1DF;color:var(--bad)}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}}
+
+/* shop */
+#shop{background:var(--bg)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:8px 16px;font:500 .93rem var(--body);cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:130px;background:var(--sky);display:grid;place-items:center;color:var(--blue)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb svg{width:54px;height:54px}
+.card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1.1rem}
+.card .cat{color:var(--ink-soft);font-size:.88rem}
+.price{font-family:var(--head);font-size:1.35rem;font-weight:700;margin-top:auto;padding-top:6px}
+.stock{font-size:.85rem;font-weight:600}
+.stock.in{color:var(--ok)}.stock.few{color:var(--warn)}.stock.order{color:var(--ink-soft)}
+.card .ask{margin-top:10px;padding:10px;text-align:center;border-radius:8px;background:var(--sky);color:var(--blue-dark);font-weight:600;text-decoration:none;font-size:.95rem}
+.card .ask:hover{background:#D3E2FF}
+.note{margin-top:22px;color:var(--ink-soft);font-size:.92rem}
+
+/* repairs */
+.list{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:18px 20px;background:#fff;border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.item h3{font-size:1.1rem}
+.item p{color:var(--ink-soft);font-size:.95rem;grid-column:1}
+.item .from{grid-row:1/3;grid-column:2;text-align:right;font-family:var(--head);font-weight:700;font-size:1.15rem;align-self:center;color:var(--blue-dark)}
+.item .from small{display:block;font:500 .78rem var(--body);color:var(--ink-soft)}
+.promise{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:28px}
+.promise div{background:var(--ink);color:#fff;padding:18px;border-radius:12px}
+.promise strong{display:block;font-family:var(--head);font-size:1.05rem;margin-bottom:4px}
+.promise span{color:#C7CEDB;font-size:.93rem}
+
+/* contact */
+#contact{background:var(--ink);color:#fff}
+#contact .lead{color:#C7CEDB}
+.cgrid{display:grid;gap:28px;grid-template-columns:1fr 1fr}
+@media(max-width:800px){.cgrid{grid-template-columns:1fr}}
+.cbox{background:#2D323C;border-radius:14px;padding:24px}
+.cbox h3{margin-bottom:12px;font-size:1.2rem}
+.cbox p{color:#D7DCE6;margin-bottom:6px}
+.hours div{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid rgba(255,255,255,.12);color:#D7DCE6}
+.hours div.today{color:#fff;font-weight:600}
+footer{background:#181B21;color:#9AA3B2;padding:22px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* floating whatsapp */
+.float{position:fixed;right:16px;bottom:16px;z-index:30;background:#1FA855;color:#fff;border-radius:99px;padding:13px 20px;font-weight:600;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);display:flex;gap:8px;align-items:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">ICON<b>TECH</b></a>
+    <nav aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#repairs">Repairs</a>
+      <a href="#contact">Visit us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>New gadgets. Fast repairs.</h1>
+      <p>Phones, laptops, headsets and chargers in stock, plus honest repairs by technicians who tell you the price before they start.</p>
+      <div class="btns">
+        <a class="btn btn-white" href="#shop">See what's in stock</a>
+        <a class="btn btn-line" href="#repairs">Book a repair</a>
+      </div>
+    </div>
+    <aside class="status" aria-label="Opening hours">
+      <span class="pill" id="pill"><i></i><span id="pillText">Checking hours</span></span>
+      <h3>Opposite Adeyemi, Ondo State</h3>
+      <div id="miniHours"></div>
+    </aside>
+  </div>
+</div>
+
+<section id="shop">
+  <div class="wrap">
+    <h2>Shop new devices</h2>
+    <p class="lead">Tap a product to ask about it on WhatsApp. Stock changes daily, so we confirm availability before you travel.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter products"></div>
+    <div class="grid" id="products"></div>
+    <p class="note">Prices are in Naira and may change with the market. Message us to confirm today's price.</p>
+  </div>
+</section>
+
+<section id="repairs">
+  <div class="wrap">
+    <h2>Repair services</h2>
+    <p class="lead">Bring your device in for a free check. You approve the price before any work begins.</p>
+    <div class="list" id="services"></div>
+    <div class="promise">
+      <div><strong>Price first</strong><span>No surprise charges after the repair.</span></div>
+      <div><strong>Quality parts</strong><span>We tell you which part we use and why.</span></div>
+      <div><strong>Your data stays yours</strong><span>We only access what the repair needs.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Visit the shop</h2>
+    <p class="lead">Walk in, call, or message us on WhatsApp.</p>
+    <div class="cgrid">
+      <div class="cbox">
+        <h3>Find us</h3>
+        <p id="addr"></p>
+        <p>Phone: <a id="phoneLink"></a></p>
+        <div class="btns" style="margin-top:18px">
+          <a class="btn btn-white" id="callBtn">Call now</a>
+          <a class="btn btn-line" id="waBtn" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-line" id="mapBtn" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="cbox hours">
+        <h3>Opening hours</h3>
+        <div id="fullHours"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> ICON TECH. Electronics sales and repairs.</span>
+    <span>Opposite Adeyemi, Ondo State, Nigeria</span>
+  </div>
+</footer>
+
+<a class="float" id="floatWa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  Chat on WhatsApp
+</a>
+
+<script>
+/* =====================================================
+   EDIT THIS BLOCK ONLY. Everything else updates itself.
+   ===================================================== */
+const SHOP = {
+  name: "ICON TECH",
+  phoneDisplay: "0800 000 0000",        // number customers see
+  phoneIntl: "2348000000000",           // same number, no + or 0 at the start: 234 + number
+  address: "Opposite Adeyemi, Ondo State, Nigeria",
+  mapQuery: "Opposite Adeyemi, Ondo State, Nigeria", // replace with exact shop name/address for Google Maps
+  // 0 = Sunday ... 6 = Saturday. Use 24h time. null = closed
+  hours: {
+    0: null,
+    1: ["08:00","19:00"], 2: ["08:00","19:00"], 3: ["08:00","19:00"],
+    4: ["08:00","19:00"], 5: ["08:00","19:00"], 6: ["09:00","18:00"]
+  }
+};
+
+// stock: "in" = In stock, "few" = Few left, "order" = On order
+// img: optional photo, e.g. "images/tecno-spark.jpg"
+const PRODUCTS = [
+  {name:"Smartphone (example)", cat:"Phones",      price:"Ask for price", stock:"in"},
+  {name:"Budget Android phone", cat:"Phones",      price:"Ask for price", stock:"in"},
+  {name:"Laptop (example)",     cat:"Laptops",     price:"Ask for price", stock:"few"},
+  {name:"Student laptop",       cat:"Laptops",     price:"Ask for price", stock:"order"},
+  {name:"Wireless headset",     cat:"Headsets",    price:"Ask for price", stock:"in"},
+  {name:"Fast charger",         cat:"Chargers",    price:"Ask for price", stock:"in"},
+  {name:"Power bank",           cat:"Chargers",    price:"Ask for price", stock:"few"},
+  {name:"Phone case and screen guard", cat:"Accessories", price:"Ask for price", stock:"in"}
+];
+
+const SERVICES = [
+  {name:"Phone screen replacement", note:"Cracked or dead display. Price depends on the phone model.", price:"Ask for price"},
+  {name:"Phone battery replacement", note:"Battery drains fast, swells or the phone shuts down.", price:"Ask for price"},
+  {name:"Charging port repair", note:"Phone or laptop will not charge or the cable keeps falling out.", price:"Ask for price"},
+  {name:"Laptop repair", note:"Screen, keyboard, hinge, battery and power faults.", price:"Ask for price"},
+  {name:"Software troubleshooting", note:"Slow device, virus removal, Windows or Android reinstall, updates.", price:"Ask for price"}
+];
+/* ===================================================== */
+
+const $ = id => document.getElementById(id);
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const icons = {
+  Phones:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>',
+  Laptops:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4.5" y="5" width="15" height="10" rx="1.5"/><path d="M2.5 19h19"/></svg>',
+  Headsets:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>',
+  Chargers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 5 13h6l-1 9 8-11h-6z"/></svg>',
+  Accessories:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>'
+};
+const stockText = {in:"In stock", few:"Few left", order:"On order, ask for delivery time"};
+const wa = msg => `https://wa.me/${SHOP.phoneIntl}?text=${encodeURIComponent(msg)}`;
+
+/* contact links */
+$("addr").textContent = SHOP.address;
+$("phoneLink").textContent = SHOP.phoneDisplay;
+$("phoneLink").href = "tel:+" + SHOP.phoneIntl;
+$("callBtn").href = "tel:+" + SHOP.phoneIntl;
+$("waBtn").href = wa("Hello ICON TECH, I'd like to make an enquiry.");
+$("floatWa").href = wa("Hello ICON TECH, I'd like to make an enquiry.");
+$("mapBtn").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SHOP.mapQuery);
+$("yr").textContent = new Date().getFullYear();
+
+/* hours */
+const fmt = t => { let [h,m] = t.split(":").map(Number); const ap = h>=12?"pm":"am"; h = h%12||12; return h + (m?":"+String(m).padStart(2,"0"):"") + ap; };
+const range = d => SHOP.hours[d] ? `${fmt(SHOP.hours[d][0])} to ${fmt(SHOP.hours[d][1])}` : "Closed";
+const order = [1,2,3,4,5,6,0];
+const today = new Date().getDay();
+const rows = order.map(d => `<div class="${d===today?'row today today':'row'}"><span>${days[d]}</span><span>${range(d)}</span></div>`).join("");
+$("miniHours").innerHTML = rows;
+$("fullHours").innerHTML = order.map(d => `<div class="${d===today?'today':''}"><span>${days[d]}</span><span>${range(d)}</span></div>`).join("");
+
+(function status(){
+  const now = new Date(), h = SHOP.hours[now.getDay()];
+  const mins = now.getHours()*60 + now.getMinutes();
+  const toM = t => { const [a,b] = t.split(":").map(Number); return a*60+b; };
+  const open = h && mins >= toM(h[0]) && mins < toM(h[1]);
+  $("pill").className = "pill " + (open ? "open" : "closed");
+  $("pillText").textContent = open ? `Open now until ${fmt(h[1])}` : "Closed right now";
+})();
+
+/* products */
+const cats = ["All", ...new Set(PRODUCTS.map(p => p.cat))];
+let active = "All";
+function drawFilters(){
+  $("filters").innerHTML = cats.map(c => `<button class="chip" aria-pressed="${c===active}" data-c="${c}">${c}</button>`).join("");
+  $("filters").querySelectorAll("button").forEach(b => b.onclick = () => { active = b.dataset.c; drawFilters(); drawProducts(); });
+}
+function drawProducts(){
+  $("products").innerHTML = PRODUCTS.filter(p => active==="All" || p.cat===active).map(p => `
+    <article class="card">
+      <div class="thumb">${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : (icons[p.cat]||icons.Accessories)}</div>
+      <div class="body">
+        <span class="cat">${p.cat}</span>
+        <h3>${p.name}</h3>
+        <span class="stock ${p.stock}">${stockText[p.stock]}</span>
+        <div class="price">${p.price}</div>
+        <a class="ask" target="_blank" rel="noopener" href="${wa(`Hello ICON TECH, is the ${p.name} available? What is the price?`)}">Ask on WhatsApp</a>
+      </div>
+    </article>`).join("");
+}
+drawFilters(); drawProducts();
+
+/* services */
+$("services").innerHTML = SERVICES.map(s => `
+  <div class="item">
+    <h3>${s.name}</h3>
+    <p>${s.note}</p>
+    <div class="from"><small>Price</small>${s.price}</div>
+  </div>`).join("");
+</script>
+</body>
+</html>
